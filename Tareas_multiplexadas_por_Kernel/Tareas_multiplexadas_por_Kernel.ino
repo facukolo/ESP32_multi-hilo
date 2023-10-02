@@ -18,8 +18,8 @@
 //********************************
 //****Definición de las tareas****
 TaskHandle_t blanco;//identificador de tarea
-TaskHandle_t rojo;//identificador de tarea
-TaskHandle_t verde;//identificador de tarea
+TaskHandle_t rojo;  //identificador de tarea
+TaskHandle_t verde; //identificador de tarea
 void crearTareas(void);
 void TaskW(void* pvParameters);//tarea
 void TaskR(void* pvParameters);//tarea
@@ -28,11 +28,11 @@ void TaskG(void* pvParameters);//tarea
 //******Definición del setup******
 void setup() {
   Serial.begin(9600);
-  pinMode(LEDw,OUTPUT);//configura el pin LEDw como salida
+  pinMode(LEDw,OUTPUT);  //configura el pin LEDw como salida
   digitalWrite(LEDw,LOW);//inicializa el pin en LOW
-  pinMode(LEDr,OUTPUT);//configura el pin LEDr como salida
+  pinMode(LEDr,OUTPUT);  //configura el pin LEDr como salida
   digitalWrite(LEDw,LOW);//inicializa el pin en LOW
-  pinMode(LEDg,OUTPUT);//configura el pin LEDg como salida
+  pinMode(LEDg,OUTPUT);  //configura el pin LEDg como salida
   digitalWrite(LEDw,LOW);//inicializa el pin en LOW
 
   //*******************************
@@ -52,9 +52,9 @@ void TaskW(void* pvParameters){
   while(1){
     Serial.println("Núcleo: "+ String(xPortGetCoreID()));
     digitalWrite(LEDw,HIGH);//setea el pin LEDw
-    delay(delayw);//espera "delayw" segundos
-    digitalWrite(LEDw,LOW);//resetea el  pin LEDw
-    delay(delayw);//espera "delayw" segundos
+    delay(delayw);          //espera "delayw" segundos
+    digitalWrite(LEDw,LOW); //resetea el  pin LEDw
+    delay(delayw);          //espera "delayw" milisegundos
   }
 }
 void TaskR(void* pvParameters){
@@ -62,9 +62,9 @@ void TaskR(void* pvParameters){
   while(1){
     Serial.println("Núcleo: "+ String(xPortGetCoreID()));
     digitalWrite(LEDr,HIGH);//setea el pin LEDr
-    delay(delayr);//espera "delayr" segundos
-    digitalWrite(LEDr,LOW);//resetea el pin LEDr
-    delay(delayr);//espera "delayr" segundos
+    delay(delayr);          //espera "delayr" milisegundos
+    digitalWrite(LEDr,LOW); //resetea el pin LEDr
+    delay(delayr);          //espera "delayr" milisegundos
   }
 }
 void TaskG(void* pvParameters){
@@ -72,9 +72,9 @@ void TaskG(void* pvParameters){
   while(1){
     Serial.println("Núcleo: "+ String(xPortGetCoreID()));
     digitalWrite(LEDg,HIGH);//setea el pin LEDg
-    delay(delayg);//espera "delayg" segundos
-    digitalWrite(LEDg,LOW);//resetea el pin LEDg
-    delay(delayg);//espera "delayg" segundos
+    delay(delayg);          //espera "delayg" segundos
+    digitalWrite(LEDg,LOW); //resetea el pin LEDg
+    delay(delayg);          //espera "delayg" milisegundos
   }
 }
 
