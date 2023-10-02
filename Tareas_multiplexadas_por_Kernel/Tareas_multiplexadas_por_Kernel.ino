@@ -50,6 +50,7 @@ void loop() {
 void TaskW(void* pvParameters){
 
   while(1){
+    Serial.println("Núcleo: "+ String(xPortGetCoreID()));
     digitalWrite(LEDw,HIGH);//setea el pin LEDw
     delay(delayw);//espera "delayw" segundos
     digitalWrite(LEDw,LOW);//resetea el  pin LEDw
@@ -59,6 +60,7 @@ void TaskW(void* pvParameters){
 void TaskR(void* pvParameters){
 
   while(1){
+    Serial.println("Núcleo: "+ String(xPortGetCoreID()));
     digitalWrite(LEDr,HIGH);//setea el pin LEDr
     delay(delayr);//espera "delayr" segundos
     digitalWrite(LEDr,LOW);//resetea el pin LEDr
@@ -68,6 +70,7 @@ void TaskR(void* pvParameters){
 void TaskG(void* pvParameters){
 
   while(1){
+    Serial.println("Núcleo: "+ String(xPortGetCoreID()));
     digitalWrite(LEDg,HIGH);//setea el pin LEDg
     delay(delayg);//espera "delayg" segundos
     digitalWrite(LEDg,LOW);//resetea el pin LEDg
