@@ -3,6 +3,8 @@
   Se trata de una prueba de código donde se pretende realizar 3 tareas, a demás del loop principal,
   que se ejecutarán en simultáneo, el Kernel del ESP32 se encarga de gestionar la forma de conseguir hacer todas
   esas tareas multiplexando el hilo de proceso entre ellos. En otras palabras, es un "multi-core" gestionado por el Kernel (FreeRTOS).
+  Es interesante saber que en este ejemplo el Kernel decide qué tareas se hacen en cada núcleo, así si detecta que el N0 está fulleado de tareas, asignará la nueva 
+  tarea al otro núcleo. De este modo y por ejemplificar, si queremos hacer tres tareas, sería importante mandar la más pesada a un núcleo especifico y las otras dos dejar en automático.
   ref.: https://www.youtube.com/watch?v=Vus7HE3wc6A&list=PL-Hb9zZP9qC48GcXj_BsDipCPAzwcps6e&index=4&ab_channel=EasyLearning
 */
 #define LEDw 23 
