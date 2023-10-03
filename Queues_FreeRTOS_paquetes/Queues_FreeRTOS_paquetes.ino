@@ -15,7 +15,6 @@
 */
 //********************************
 //****Inclusiones****
-#include <arduinoFFT.h>
 #include <stdint.h>
 //***Deefiniciones***
 #define LEDz GPIO_NUM_23
@@ -27,9 +26,7 @@
 #define memoria 2048 // bits de RAM para cada tarea
 #define QUEUE_LENGTH 20 // tamaño de la cola
 #define SAMPLES 128          // Número de muestras
-#define SAMPLING_FREQUENCY 10000.0 // Frecuencia de muestreo en Hz
-#define FFT_N 128             // Tamaño de la FFT (debe ser igual a SAMPLES)	
-bool debug=false;             //true si se quieren ver los "serial.print /ln" de las instrucciones que están condicionadas por esa bandera
+
 //********************************
 //***Declaraciones de las tarea***
 TaskHandle_t a;   //identificador de tarea
