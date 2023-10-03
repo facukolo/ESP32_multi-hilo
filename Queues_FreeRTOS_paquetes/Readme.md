@@ -19,3 +19,5 @@ arduinoFFT FFT = arduinoFFT();
       }
       Serial.println("");
 </pre>
+En el video se aprecia que la cola alcanza a llenarse, sin embargo el delay que se da al encendido del led LEDse es suficiente para descongestionar la cola.
+Por otro lado, el LEDre nunca llega a encenderse. Eso significa que la extracción de datos desde la cola es rápida pero no tanto como para lograr vaciar la cola.
