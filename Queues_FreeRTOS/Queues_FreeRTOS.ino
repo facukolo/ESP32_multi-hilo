@@ -44,10 +44,12 @@ void setup() {
   crearTareas();      
   crearQueues();
 }
+
 //********************************
 //******Definición del main*******
 void loop() {
 }
+
 //********************************
 //******Definición de Tasks*******
 void TaskA(void* pvParameters){
@@ -87,7 +89,6 @@ void TaskB(void* pvParameters){
   }
 }
 
-
 //**Funciones del Setup**
 void crearTareas(void){
   xTaskCreatePinnedToCore(TaskA, /*función de la tarea*/
@@ -118,4 +119,3 @@ void crearQueues(void){
       gpio_set_level(LEDg,1);
     }
 }
-
