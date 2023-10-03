@@ -85,7 +85,7 @@ void TaskB(void* pvParameters){
   bool mostrar=false;
   while(1){
     doubleArray128 receivedData;
-    if(!xQueueReceive(queue, &receivedData, pdMS_TO_TICKS(0.1*delayz))){//tiempo de espera a la recepción menor
+    if(!xQueueReceive(queue, &receivedData, pdMS_TO_TICKS(delayz))){//tiempo de espera a la recepción menor
         gpio_set_level(LEDre,1);//indica que la cola esta vacía
         vTaskDelay(pdMS_TO_TICKS(delayz));
         gpio_set_level(LEDre,0);
